@@ -1,7 +1,7 @@
 #on: [push, pull_request]
 name: CI
-#on: pull_request
-on: push
+on: pull_request
+#on: push
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -9,7 +9,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v3
       - name: Branch name
-        run: echo running on branch ${{ github.head_ref }} and ${GITHUB_REF##*/}
+        run: echo running on branch ${{ github.head_ref }}
       - name: Check Apache syntax
         uses: ./
         with:
