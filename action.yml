@@ -5,11 +5,11 @@ inputs:
   branch-name:
     description: 'Branch name that does pull request'
     required: true
-#outputs:
-#  result:
-#    description: 'The $? result of the test'
-#runs:
-#  using: 'docker'
-#  image: 'Dockerfile'
-#  args:
-#    - ${{ inputs.branch-name }}
+outputs:
+  result:
+    description: 'The $? result of the test'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.branch-name }}
