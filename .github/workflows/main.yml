@@ -11,9 +11,13 @@ jobs:
       - name: Branch name
         run: echo running on branch ${{ github.head_ref }}
       - name: Check Apache syntax
+        id: script_result
         uses: ./
         with:
           branch-name: ${{ github.head_ref }}
+      - name: Get the output branch
+        run: echo "The output from the script ${{ steps.script_result.outputs.branch_name }}"
+        
 #        run: echo running on branch ${GITHUB_REF##*/}
 #      - name: Build
 #        run: docker build -t tedmiston/tag-example:${GITHUB_REF##*/} .
