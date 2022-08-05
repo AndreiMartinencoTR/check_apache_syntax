@@ -16,7 +16,7 @@ jobs:
         with:
           branch-name: ${{ github.head_ref }}
       - name: Get the output branch
-        run: echo "The output from the script ${{ steps.script_result.outputs.branch_name }}"
+        run: echo "The output from the script ${{ steps.script_result.outputs.result }}"
         
 #        run: echo running on branch ${GITHUB_REF##*/}
 #      - name: Build
