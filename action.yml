@@ -11,5 +11,6 @@ description: 'Runs the apache configuration check'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  
   # args:
     # - ${{ inputs.branch-name }}
