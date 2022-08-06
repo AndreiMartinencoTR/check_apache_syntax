@@ -1,5 +1,5 @@
 FROM centos:centos7
-# RUN yum install -y httpd
+RUN yum install -y httpd
 COPY entrypoint.sh /entrypoint.sh
 RUN ["chmod", "+x", "/entrypoint.sh"]
 ENTRYPOINT [ "/entrypoint.sh" ]
