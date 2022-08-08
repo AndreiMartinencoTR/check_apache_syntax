@@ -8,9 +8,16 @@ description: 'Runs the apache configuration check'
 # outputs:
 #   result:
 #     description: 'The result of the test'
+
+# runs:
+#   using: 'docker'
+#   image: 'Dockerfile'
+
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/action_script.sh
+      shell: bash
+
   # args:
     # - ${{ inputs.branch-name }}
